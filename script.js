@@ -109,3 +109,154 @@ function clearCompletedTasks() {
 //  console.log(todoItems); // This should show the todo item you added
 //  removeToDoItem(0); // This should remove the todo item with ID 0 from the array
 //  markToDoItemAsCompleted(0); // This should mark the todo item with ID 0 as completed
+todoItems = [];
+
+
+function addToDoItem(text) {
+  
+  const newTodo = {
+    id: Date.now(),
+    text: text,
+    completed: false,
+  };
+
+  
+  todoItems.push(newTodo);
+
+  
+  console.log("New todo added:", newTodo);
+}
+
+
+function removeToDoItem(todoId) {
+  
+  const index = todoItems.findIndex(item => item.id === todoId);
+
+ 
+  if (index !== -1) {
+    todoItems.splice(index, 1);
+    
+    console.log("Todo removed. Updated todo list:", todoItems);
+  } else {
+    console.error("Todo not found with ID:", todoId);
+  }
+}
+
+
+function markToDoItemAsCompleted(todoId) {
+  
+  const todoItem = todoItems.find(item => item.id === todoId);
+  if (todoItem) {
+    todoItem.completed = true;
+    
+    console.log("Todo marked as completed. Updated todo list:", todoItems);
+  } else {
+    console.error("Todo not found with ID:", todoId);
+  }
+}
+
+
+function deleteToDoItem(todoId) {
+  
+  const index = todoItems.findIndex(item => item.id === todoId);
+
+  
+  if (index !== -1) {
+    todoItems.splice(index, 1);
+    
+    console.log("Todo deleted. Updated todo list:", todoItems);
+  } else {
+    console.error("Todo not found with ID:", todoId);
+  }
+}
+
+
+function clearCompletedTasks() {
+  
+  todoItems = todoItems.filter(item => !item.completed);
+
+  
+  console.log("Completed todos cleared. Updated todo list:", todoItems);
+}
+
+addToDoItem("Learn JavaScript");
+addToDoItem("Build a Todo App");
+removeToDoItem(todoItems[0].id);
+markToDoItemAsCompleted(todoItems[0].id);
+deleteToDoItem(todoItems[0].id);
+clearCompletedTasks();todoItems = [];
+
+
+function addToDoItem(text) {
+  
+  const newTodo = {
+    id: Date.now(),
+    text: text,
+    completed: false,
+  };
+
+  
+  todoItems.push(newTodo);
+
+  
+  console.log("New todo added:", newTodo);
+}
+
+
+function removeToDoItem(todoId) {
+  
+  const index = todoItems.findIndex(item => item.id === todoId);
+
+ 
+  if (index !== -1) {
+    todoItems.splice(index, 1);
+    
+    console.log("Todo removed. Updated todo list:", todoItems);
+  } else {
+    console.error("Todo not found with ID:", todoId);
+  }
+}
+
+
+function markToDoItemAsCompleted(todoId) {
+  
+  const todoItem = todoItems.find(item => item.id === todoId);
+  if (todoItem) {
+    todoItem.completed = true;
+    
+    console.log("Todo marked as completed. Updated todo list:", todoItems);
+  } else {
+    console.error("Todo not found with ID:", todoId);
+  }
+}
+
+
+function deleteToDoItem(todoId) {
+  
+  const index = todoItems.findIndex(item => item.id === todoId);
+
+  
+  if (index !== -1) {
+    todoItems.splice(index, 1);
+    
+    console.log("Todo deleted. Updated todo list:", todoItems);
+  } else {
+    console.error("Todo not found with ID:", todoId);
+  }
+}
+
+
+function clearCompletedTasks() {
+  
+  todoItems = todoItems.filter(item => !item.completed);
+
+  
+  console.log("Completed todos cleared. Updated todo list:", todoItems);
+}
+
+addToDoItem("Learn JavaScript");
+addToDoItem("Build a Todo App");
+removeToDoItem(todoItems[0].id);
+markToDoItemAsCompleted(todoItems[0].id);
+deleteToDoItem(todoItems[0].id);
+clearCompletedTasks();
